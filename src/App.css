@@ -1,38 +1,129 @@
+* {
+  padding: 0px;
+  margin: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 100vh !important;
+}
+
+ul {
+  padding-left: 0 !important;
+}
+
+/* pokemonApi.js page css starts here */
 .App {
-  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 25px;
+  width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.title {
+  width: 100%;
+  height: fit-content;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.searchBtn {
+  font-size: 17px;
+  background-color: #056187;
+  color: #fff;
+}
+.localDataContainer {
+  color: #000;
+  top: 50px;
+  left: 15em;
+  width: 45%;
+}
+.clearButton {
+  background-color: #fff;
+  font-weight: 300;
+  font-size: 16px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.prevSearch {
+  border-radius: 6px;
+  box-shadow: 0 7px 29px 0 hsla(240, 5%, 41%, 0.2);
+  box-sizing: border-box;
+  background: #fff;
+  height: auto;
+  margin-top: 5px;
+  max-height: 40vh;
+  overflow: auto;
+  position: absolute;
+  font-weight: 300;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  max-width: 100%;
+  width: 75%;
+  z-index: 1111;
+  left: -5rem;
+}
+.deleteButton {
+  background-color: #fff;
+  border: 1px solid red;
+  border-radius: 100%;
+  height: 40px;
+  left: -1rem;
+  top: -1rem;
+  width: 40px;
+  color: red;
+  z-index: 1000;
+}
+.searchButton {
+  background-color: #fff;
+}
+.searchButton:hover {
+  background-color: #ebebeb;
+}
+.pokeImage {
+  width: 300px !important;
+  height: 300px !important;
+}
+.DisplaySection {
+  min-width: 50vh !important;
+}
+/* pokemonApi.js page css ends here */
+
+/* Navbar.js css starts here */
+.App-logo {
+  width: 120px;
+}
+.Ball-logo {
+  width: 50px;
+}
+/* Navbar.js css ends here */
+
+@media (max-width: 576px) {
+  .Ball-logo {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+  .pokeImage {
+    width: 330px;
+    height: 250px;
+  }
+  .DisplaySection {
+    max-width: 50vh !important;
+  }
+  .prevSearch {
+    width: 85% !important;
+    left: -2rem !important;
   }
 }
+
+@media (min-width: 1024px) {
+  .prevSearch {
+    width: 92% !important;
+    left: 9rem !important;
+  }
+}
+@media (min-width: 768px) {
+  .prevSearch {
+    width: 83%;
+    left: 4rem;
+  }
+}
+
