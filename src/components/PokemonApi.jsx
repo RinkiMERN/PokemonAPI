@@ -318,6 +318,13 @@ const PokemonApi = () => {
     setPrevSearch(false);
   };
 
+  const closeFilter=()=>{
+    if(document.getElementById("typeText1").value=="")
+    {
+      setPrevSearch(false)
+    }
+  }
+
   return (
     <>
       <ToastContainer />
@@ -344,6 +351,7 @@ const PokemonApi = () => {
                   autoComplete="off"
                   onChange={(e) => {
                     handleChange(e.target.value);
+                    closeFilter()
                   }}
                 />
 
