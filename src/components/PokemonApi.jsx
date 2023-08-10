@@ -240,8 +240,8 @@ const PokemonApi = () => {
             JSON.stringify(localsetData)
           );
         }
-        console.log(localsetData);
         setChoosedPokemon(true);
+        setpokemonName("");
       })
       .catch((err) => {
         console.log(err);
@@ -318,12 +318,11 @@ const PokemonApi = () => {
     setPrevSearch(false);
   };
 
-  const closeFilter=()=>{
-    if(document.getElementById("typeText1").value=="")
-    {
-      setPrevSearch(false)
+  const closeFilter = () => {
+    if (document.getElementById("typeText1").value == "") {
+      setPrevSearch(false);
     }
-  }
+  };
 
   return (
     <>
@@ -339,7 +338,6 @@ const PokemonApi = () => {
                 onSubmit={(e) => {
                   e.preventDefault();
                   searchPokemon();
-                  // onSubmitForm();
                   notify();
                 }}
               >
@@ -351,7 +349,7 @@ const PokemonApi = () => {
                   autoComplete="off"
                   onChange={(e) => {
                     handleChange(e.target.value);
-                    closeFilter()
+                    closeFilter();
                   }}
                 />
 
@@ -365,30 +363,7 @@ const PokemonApi = () => {
                   className="btn btn-outline-danger "
                   onClick={handleClose}
                 >
-                  <svg
-                    stroke="currentColor"
-                    fill="currentColor"
-                    stroke-width="0"
-                    viewBox="0 0 512 512"
-                    height="1em"
-                    width="1em"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill="none"
-                      stroke-linecap="square"
-                      stroke-miterlimit="10"
-                      stroke-width="32"
-                      d="M320 146s24.36-12-64-12a160 160 0 10160 160"
-                    ></path>
-                    <path
-                      fill="none"
-                      stroke-linecap="square"
-                      stroke-miterlimit="10"
-                      stroke-width="32"
-                      d="M256 58l80 80-80 80"
-                    ></path>
-                  </svg>
+                  <i class="fa fa-refresh" aria-hidden="true"></i>
                 </button>
               </form>
             </div>
